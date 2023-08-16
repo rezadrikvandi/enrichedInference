@@ -1,0 +1,29 @@
+Package: enrichedInference
+Type: Package
+Title: Enriched estimation and inference for high dimensional data
+Version: 0.1.0
+Author: Reza Drikvandi
+Maintainer: The package maintainer, Reza Drikvandi <reza.drikvandi@durham.ac.uk>
+Description: This package implements the enriched estimation and inference for high dimensional data. The main function is called "enrichedInference" which applies both the enriched estimation and inference. 
+             Also, a test data set is included together with the real data set "riboflavin" analysed in the paper. 
+             To apply the enriched method to the real data (riboflavin data with n=71 and p=4088) in the package, try the following: 
+             enrichedInference(X=riboflavin$x, Y=riboflavin$y, k=1, Xcorr="marginal", Bonf.correction=TRUE)
+             enrichedInference(X=riboflavin$x, Y=riboflavin$y,k=1, Xcorr="partial", Bonf.correction=TRUE)
+             Also, to apply the enriched method to the testdata in the package (with n=100, p=500 and the first three covariates being truly significant each with coefficient 1, try this command: 
+             enrichedInference(X=testdata[,-1], Y=testdata[,1], intercept=FALSE, Xcorr="marginal")
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 4.1),
+         R.utils,
+         MASS,
+         Matrix,
+         glmnet,
+         ppcor,
+         optimx,
+         mvtnorm,
+         numDeriv,
+         miscTools,
+         pander,
+         stringr
+RoxygenNote: 7.2.1
